@@ -1,7 +1,7 @@
 # Unix Tools And Environment
 ## Course: 10671230
 
-For follwoing along with these guides you can either use Ubuntu Desktop or Ubuntu Server:
+For follwoing along with these guides you can either use Ubuntu Desktop or Ubuntu Server either physical devices or VMs:
 
    * [Ubuntu Desktop Install](https://www.freecodecamp.org/news/how-to-install-ubuntu-with-oracle-virtualbox/)
 
