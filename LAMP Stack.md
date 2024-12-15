@@ -112,7 +112,7 @@ The output of **sudo systemctl status apache2** will look something like this:
 Verify Apache is configured properly by entering the following command in a browser URL `http://<your server's IP Address>/`
 
 Step 3 Activate and Configure the Uncomplicated Firewall (UFW) [Optional]
---------------------------------------------------------------
+-------------------------------------------------------------------------
 
 The Uncomplicated Firewall is a wrapper that makes it easier to manage the Linux built-in iptables firewall. In other words, iptables is the actual firewall.
 
@@ -198,8 +198,10 @@ To verify issue the command
 php -v
 ```
 
-Step 7 Install phpMyAdmin
---------------------------
+Step 7 Install phpMyAdmin [Optional]
+------------------------------------
+Note: it is better to do [basic MySQL setup](### Test PHP/MySQL Connection)
+
 To install `phpMyAdmin` use the following command:
 ```bash
 sudo apt install phpmyadmin
