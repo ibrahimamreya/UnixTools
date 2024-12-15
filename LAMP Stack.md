@@ -1,4 +1,4 @@
-How to Install Linux, Apache, MySQL, and PHP LAMP Stack on Ubuntu 24.04LTS Server
+LAMP Stack on Ubuntu 24.04LTS Server
 =================================================================================
 
 In this article we cover taking an Ubuntu 24.04LTS server and expanding it into a full blown Linux, Apache, MySQL, and PHP (LAMP) web server.
