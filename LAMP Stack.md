@@ -116,7 +116,7 @@ Step 3 Activate and Configure the Uncomplicated Firewall (UFW) [Optional]
 
 The Uncomplicated Firewall is a wrapper that makes it easier to manage the Linux built-in iptables firewall. In other words, iptables is the actual firewall.
 
-For our purposes, we will use a subset of the UFW commands. Basically, all we need from UFW is to open the Apache server’s ports, along with opening the OpenSSH ports. UFW can do a lot more than we will cover here.
+For our purposes, we will use a subset of the UFW commands. Basically, all we need from UFW is to open the Apache server’s ports, along with opening the OpenSSH ports.
 
 Enable and start UFW: 
 ```bash
