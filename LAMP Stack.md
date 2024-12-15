@@ -31,7 +31,7 @@ Step 1 is to Update and Upgrade System Packages
 
 The first thing you need to do is update the server to the latest package index. And then upgrade any local packages that need to be updated. And finally remove any non-used packages and Kernels.
 
-This consists of 3 commands:
+To update the repo local cache: 
 ```bash
 sudo apt update
 ```
