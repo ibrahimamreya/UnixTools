@@ -291,14 +291,14 @@ php /var/www/html/test-cli.php
 To connect vscode to your server install the `Remote-SSH` extension `ms-vscode-remote.remote-ssh`.
 Then use one of the many ways to connect to the server through SSH.
 To fix permissions for saving project files located `/var/www/html/` use the following extension: 
-`
+```
 Name: Save as Root in Remote - SSH
 Id: yy0931.save-as-root
 Description: Edit configuration files with root privileges while using the Remote - SSH extension
 Version: 1.8.0
 Publisher: yy0931
 VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=yy0931.save-as-root
-`
+```
 or you can simply change the file owner through vscode terminal:
 ```bash
 chown ibrahim /var/www/html/site
