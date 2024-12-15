@@ -32,34 +32,30 @@ Step 1 is to Update and Upgrade System Packages
 The first thing you need to do is update the server to the latest package index. And then upgrade any local packages that need to be updated. And finally remove any non-used packages and Kernels.
 
 This consists of 3 commands:
-
-1\. **sudo apt update**
-
-2\. **sudo apt upgrade**
-
-3\. **sudo apt autoremove**
-
+```bash
+sudo apt update
+```
 The command **sudo apt update** – is used to update the list of available packages and their versions from the repositories defined in your system’s configuration files. It doesn’t actually install or upgrade any packages; it simply fetches the latest package information so that you can later install or upgrade packages with up-to-date information or code.
 
 Running **apt update** regularly ensures that your system has the latest package information.
 
+```bash
+sudo apt upgrade
+````
 The **sudo apt upgrade** command is used to upgrade installed packages.
 
-At this point run the 4 below commands:
 
-1\. **sudo apt update**
-
-2\. **sudo apt upgrade**
-
-3\. **sudo apt autoremove**
-
-4\. **sudo reboot**
+```bash
+sudo apt autoremove
+```
 
 **sudo apt autoremove** is used to remove any old packages and old Kernels.
 
 After running **sudo apt autoremove**, it is recommend to reboot to ensure everything is loaded properly.
+```bash
+sudo reboot
+```
 
-Run **sudo reboot** to reboot your server.
 
 Step 2 Install the Apache Web Server
 ------------------------------------
@@ -203,8 +199,15 @@ To verify issue the command
 php -v
 ```
 
+Step 7 Install phpMyAdmin
+--------------------------
+To install `phpMyAdmin` use the following command:
+```bash
+sudo apt install phpmyadmin
+```
+follow the onscreen instructions. the open the link `http://[Server_IP]/phpmyadmin` and use the username `root` and password `password`.
 
-Step 7 Test Your LAMP Stack
+Step 8 Test Your LAMP Stack
 ---------------------------
 
 ### Test PHP
@@ -282,12 +285,7 @@ On the command line issue the command:
 ```bash
 php /var/www/html/test-cli.php
 ```
-### Install phpMyAdmin
-To install `phpMyAdmin` use the following command:
-```bash
-sudo apt install phpmyadmin
-```
-follow the onscreen instructions. the open the link `http://[Server_IP]/phpmyadmin` and use the username `root` and password `password`.
+
 ### Connect to Visual studio code
 To connect vscode to your server install the `Remote-SSH` extension `ms-vscode-remote.remote-ssh`.
 Then use one of the many ways to connect to the server through SSH.
