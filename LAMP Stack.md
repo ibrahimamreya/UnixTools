@@ -111,41 +111,40 @@ The output of **sudo systemctl status apache2** will look something like this:
     
 Verify Apache is configured properly by entering the following command in a browser URL `http://<your server's IP Address>/`
 
-Step 3 Activate and Configure the Uncomplicated Firewall (UFW)
+Step 3 Activate and Configure the Uncomplicated Firewall (UFW) [Optional]
 --------------------------------------------------------------
-
-This consists of 6 commands:
-
-1\. **sudo ufw enable**
-
-2\. **sudo ufw disable**
-
-3\. **sudo ufw status**
-
-4\. **sudo ufw app list**
-
-5\. **sudo ufw allow 'Apache Full'**
-
-6\. **sudo ufw allow 'OpenSSH'**
-
-Ubuntu uses the **Uncomplicated Firewall (UFW)**.
 
 The Uncomplicated Firewall is a wrapper that makes it easier to manage the Linux built-in iptables firewall. In other words, iptables is the actual firewall.
 
 For our purposes, we will use a subset of the UFW commands. Basically, all we need from UFW is to open the Apache server’s ports, along with opening the OpenSSH ports. UFW can do a lot more than we will cover here.
 
-Enable and start UFW: **sudo ufw enable** This activates the firewall with default settings.
+Enable and start UFW: 
+```bash
+sudo ufw enable
+```
+This activates the firewall with default settings.
 
-1\. **sudo ufw disable** turns off the firewall.
+To turen off the firewall:
+```bash
+sudo ufw disable
+```
 
-2\. **sudo ufw status** shows whether UFW is active and displays the rules currently in place.
-
-In Ubuntu, the Uncomplicated Firewall (UFW) simplifies the process of managing firewall rules. UFW has predefined application profiles for commonly used services.
-
-To allow the Apache web server port 80 (not secured/HTTP) and port 443 (secured/ HTTPS) issue the command **sudo ufw allow ‘Apache Full’**
-
-To allow the OpenSSH port to be opened, issue the command **s****udo ufw allow ‘OpenSSH’**
-
+To see whether UFW is active and display the rules currently in place:
+```bash
+sudo ufw status
+```
+In Ubuntu, the Uncomplicated Firewall (UFW) simplifies the process of managing firewall rules. UFW has predefined application profiles for commonly used services. to list the available predefined rules:
+```bash
+sudo ufw app list
+```
+To allow the Apache web server port 80 (not secured/HTTP) and port 443 (secured/ HTTPS) issue the command
+```bash
+sudo ufw allow 'Apache Full'
+```
+To allow the OpenSSH port to be opened, issue the command:
+```bash
+sudo ufw allow 'OpenSSH'
+```
 At this point you can run **sudo ufw status** to verify how UFW is configured.
 
 To verify Apache is still available access **http://<your server’s IP>/** in your web browser.
