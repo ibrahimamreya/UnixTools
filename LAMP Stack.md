@@ -200,7 +200,7 @@ php -v
 
 Step 7 Install phpMyAdmin [Optional]
 ------------------------------------
-Note: it is better to do [basic MySQL setup](###Test PHP/MySQL Connection)
+Note: it is better to do [basic MySQL setup](#Test PHP/MySQL Connection)
 
 To install `phpMyAdmin` use the following command:
 ```bash
