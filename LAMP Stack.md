@@ -124,7 +124,7 @@ sudo ufw enable
 ```
 This activates the firewall with default settings.
 
-To turen off the firewall:
+To turn off the firewall:
 ```bash
 sudo ufw disable
 ```
