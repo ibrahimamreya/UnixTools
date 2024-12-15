@@ -314,4 +314,5 @@ The command **sudo systemctl status mysql** will display the current status of t
 Conclusion
 ----------
 
-In this article, I covered how to install Apache, MySQL, and PHP on Linux, a LAMP Stack on Ubuntu 24.04LTS Server. Then we test that the configuration to verify it is working correctly. I use Ubuntu 24.04 LTS, Apache2, MySQL and PHP to build web apps.
+In this article, we covered how to install Apache, MySQL, and PHP on Linux, a LAMP Stack on Ubuntu 24.04LTS Server. Then we test that the configuration to verify it is working correctly. I use Ubuntu 24.04 LTS, Apache2, MySQL and PHP to build web apps.
+
