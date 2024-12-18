@@ -26,6 +26,19 @@ Prerequisites
 
 You will need to have access to an Ubuntu 24.04LTS server and you will need to have sudo privileges.
 
+VirtualBox VM Recomended Specs
+------------------------------
+If you are using virtualbox, it is recommended to use the following specs for the LAMP stack VM:
+
+   1) Set an appropriate name.
+   2) Select the ubuntu server iso file you downloaded from [Ubuntu Site](https://ubuntu.com/download/server).
+   3) Check the **"Skip Unattended Installation"** option.
+   4) Set the memory to at least **4 GB**.
+   5) Set the CPU cores to **2**.
+   6) Set the HDD to **40 GB**.
+   7) Set adapter 1 to use **bridge** networking.
+   8) Make sure to check install **openssh server** during the installation.
+
 Step 1 is to Update and Upgrade System Packages
 -----------------------------------------------
 
