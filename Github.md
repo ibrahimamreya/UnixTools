@@ -1,0 +1,269 @@
+# Remote Repositories
+
+## Main Features
+
+1) Backup online.
+2) 2-Way Sync.
+
+Regular cloud storage (Google Drive, OneDrive, ...) provide online backups and automatic 2-way sync.
+
+`Code is never syncronized automatically because during development the code is practically broken.`
+
+A git repo. is a folder that is being tracked by git.
+
+**GitHub** is designed as an online storage for git repos.
+
+Other examples include **Bitbucket** and **GitLab**.
+
+using such services only need a few steps:
+
+1) Create an online account.
+2) Connect your local repo. to an online repo.
+3) push and pull changes for 2-way sync.
+
+**Create a github account**
+
+**Create a public repo**
+
+Now we have 2 repos. The **Local Repository** which is the project folder being tracked by git. and the **Remote Repository** which is the online repo we just created.
+
+to link the repos just copy the code and use the follwoing command after navigating to the local repos' folder:
+
+```bash
+git remote add origin
+ https://github.com/ibrahimamreya/git-tutorial.git
+```
+to get the info of the remote repo for the current local repo:
+
+```bash
+git remote
+git remote -v
+```
+
+example output:
+
+```bash
+ibrahim@elastic:~/Desktop/git-tutorial$ git remote
+origin
+ibrahim@elastic:~/Desktop/git-tutorial$ git remote -v
+origin  https://github.com/ibrahimamreya/git-tutorial.git (fetch)
+origin  https://github.com/ibrahimamreya/git-tutorial.git (push)
+```
+
+to unlink your local repo from the remote repo:
+
+```bash
+git remote remove origin
+```
+
+**Upload = push**
+
+**Download = pull**
+
+In order to upload to the remote repo we need to provide our username on github to git:
+
+```bash
+git config --global credential.username "ibrahimamreya"
+```
+
+before trying to push our code we have to get an access tokent from gihub. [**Profile--> Settings--> Developer Settings--> Personal access tokens**] just check the Repo options when creating the token.
+
+Now push your code and you will be prompted for a password just enter the token.
+
+to push the code:
+
+```bash
+git push origin main
+```
+
+Enter the token when prompted.
+
+**You will be asked to enter the token every time you push code**
+
+to fix this we will remove the remote repo and re-add it using ssh.
+
+```bash
+git remote remove origin
+```
+
+In order to use ssh we need to generate a key and add it to our profile.
+
+TO generate a private key:
+
+```bash
+ssh-keygen -C "ibrahimamreya@gtihub.com"
+```
+
+This key will be stored in `~/.ssh`.
+copy the contents of the public key.
+
+```bash
+cat ~/ssh/id_ed25519.pub
+```
+copy the entire output and got to your github icon then choose **settings**, **SSH and GPG** keys and create a **new key** with the value you copied.
+
+to test if git is working from a terminal use the follwoing command:
+
+```bash
+ssh -T git@github.com
+```
+Now go to the repo online and copy the **ssh** link from the code button and inside your local repo in a terminal do:
+
+```bash
+git remote add origin git@github.com:ibrahimamreya/git-tutorial.git
+```
+
+Now try to push and pull. it should work fine.
+
+**Explore the GitHub Interface**
+
+**create a new commit then view the graph**
+
+now sync the chnages: `git push origin main`.
+
+To shorten the push and pull commands:
+
+```bash
+git pull origin main --set-upstream
+```
+
+```bash
+git push origin main --set-upstream
+```
+
+now you can use the shorthand `git push` and `git pull`.
+
+**make a change then push without committing**
+
+**Nothing happens**
+
+**Git only pushes commits not changes**
+
+### Amend a local commit
+
+if we amend a local commit a branch will be created.
+
+make any change then:
+
+```bash
+git add .
+git commit --amend -m "Version 12"
+git log --all --graph
+```
+
+notice the branch created.
+
+try to bush your changes to github.
+
+An error will be generated.
+
+To fix this we need to force the push using `-f` flag.
+
+```bash
+git push origin main -f
+```
+
+```bash
+ibrahim@elastic:~/Desktop/git-tutorial$ git push -f
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 447 bytes | 447.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:ibrahimamreya/git-tutorial.git
+ + f3e2ed2...01357ab main -> main (forced update)
+ibrahim@elastic:~/Desktop/git-tutorial$ git log --all --graph
+* commit 01357ab1e13fc0cbf6419a276d88b74b41ff8c24 (HEAD -> main, origin/main)
+| Author: Ibrahim Amreya <test@test.com>
+| Date:   Sat Dec 21 15:32:35 2024 +0200
+| 
+|     Version 12
+| 
+* commit 6b912e7a01b1ab5e3f77e3df4959502eac3b436c
+| Author: Ibrahim Amreya <test@test.com>
+| Date:   Fri Dec 20 20:53:13 2024 +0200
+| 
+|     Version 1 Restored
+| 
+```
+
+## Clone A Repository
+
+to clone a repo use the command:
+
+```bash
+git clone git@github.com:ibrahimamreya/git-tutorial.git
+```
+
+use the ssh link since we already have ssh keys working.
+
+You can provide a name for the localfolder:
+
+
+```bash
+git clone git@github.com:ibrahimamreya/git-tutorial.git  my_project
+```
+
+navigate to `my_project` create a file, add it to git, commit it and push to github.
+
+**check the log on both local repos you will notice that the git-tutorial is out of sync even though it says it is**
+
+**Remote do not get updated automatically**
+
+to view the remote **origin/main** wihtout downloading use:
+
+```bash
+git fetch
+```
+now view the log again and notice that remote is a head of local.
+```bash
+ibrahim@elastic:~/Desktop/git-tutorial$ git fetch
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 2 (delta 1), reused 2 (delta 1), pack-reused 0 (from 0)
+Unpacking objects: 100% (2/2), 240 bytes | 240.00 KiB/s, done.
+From github.com:ibrahimamreya/git-tutorial
+   99da4fb..4c37de9  main       -> origin/main
+ibrahim@elastic:~/Desktop/git-tutorial$ git log --all --graph
+* commit 4c37de98bc5d101bc4220b6fd31aae7149fe25cd (origin/main)
+| Author: Ibrahim Amreya <test@test.com>
+| Date:   Sat Dec 21 16:34:48 2024 +0200
+| 
+|     added test2.txt
+| 
+* commit 99da4fb69e091181f69adee836e20a4faef797f1 (HEAD -> main)
+| Author: Ibrahim Amreya <test@test.com>
+| Date:   Sat Dec 21 16:23:09 2024 +0200
+| 
+|     added test.txt
+| 
+* commit 01357ab1e13fc0cbf6419a276d88b74b41ff8c24
+```
+
+to fix this just pull the changes:
+
+```bash
+git pull origin main
+```
+
+then check the log.
+
+## Practice
+
+### case 1: Existing Project Folder
+
+1) Run `git init`.
+2) Create a commit.
+3) Create a Repo on github.
+4) add remote to local repo.
+5) push to remote.
+
+### Case 2: New Project
+
+You can do as case 1 or:
+
+1) Create an online repo.
+2) clone the repo.
+3) make changes, commit and push to github.
