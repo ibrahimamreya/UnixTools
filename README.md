@@ -16,3 +16,6 @@ To follow along with these guides you can either use Ubuntu Desktop or Ubuntu Se
 
 [4. GitHub Remote Repository](https://github.com/ibrahimamreya/UnixTools/blob/main/4.%20Github.md)
 
+[5. Branching and Merging](https://github.com/ibrahimamreya/UnixTools/blob/main/5.%20Branching%20And%20Merging.md)
+
+
