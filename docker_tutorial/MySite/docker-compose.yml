@@ -1,0 +1,45 @@
+services:
+
+  backend:
+    image: mysite-backend
+    pull_policy: never
+    container_name: mysite-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: runner
+    ports:
+      - 8000:8000
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - mongodb
+
+  frontend:
+    image: mysite-frontend
+    pull_policy: never
+    container_name: mysite-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+
+  mongodb:
+    image: mongo:7.0.12
+    container_name: mysite-mongodb
+    volumes:
+      - mongodb-data:/data/db
+    env_file:
+      - ./mongodb/.env
+
+  mongo-express:
+    image: mongo-express:1.0.2
+    ports:
+      - 8081:8081
+    container_name: mysite-mongo-express
+    env_file:
+    - ./mongo-express/.env
+
+volumes:
+  mongodb-data:
