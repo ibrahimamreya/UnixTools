@@ -1,6 +1,0 @@
-services:
-  demoscript:
-    image: docker.io/mcodingllc/demoscript:0.0.1
-    build:
-      context: .
-      dockerfile: Dockerfile
