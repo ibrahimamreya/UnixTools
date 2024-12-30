@@ -16,3 +16,6 @@ localhost:80 172.18.0.1 - - [29/Dec/2024:06:26:22 +0000] "GET / HTTP/1.1" 200 13
 172.18.0.5:80 172.18.0.1 - - [29/Dec/2024:06:59:36 +0000] "GET /assets/images/favicon.svg HTTP/1.1" 200 1165 "http://localhost:443/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 172.18.0.5:80 172.18.0.1 - - [29/Dec/2024:07:00:27 +0000] "-" 408 0 "-" "-"
 172.18.0.5:80 172.18.0.1 - - [29/Dec/2024:07:00:35 +0000] "-" 408 0 "-" "-"
+localhost:80 172.18.0.1 - - [30/Dec/2024:06:26:18 +0000] "GET / HTTP/1.1" 200 1061 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+localhost:80 172.18.0.1 - - [30/Dec/2024:06:26:18 +0000] "GET /assets/css/bulma.min.css HTTP/1.1" 200 22080 "http://localhost/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+localhost:80 172.18.0.1 - - [30/Dec/2024:06:26:18 +0000] "GET /assets/images/favicon.svg HTTP/1.1" 304 248 "http://localhost/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
