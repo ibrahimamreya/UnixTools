@@ -1,0 +1,29 @@
+services:
+  www:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./html:/var/www/html
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+  db:
+    image: mysql
+    restart: always
+# Bind mounts will break on second run better to use volumes
+    volumes:
+      - mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+# Allow user to choose server/container to login to in login page      
+    environment:
+      - PMA_ARBITRARY=1
+volumes:
+  mysql:
