@@ -4,7 +4,7 @@
 To follow along with these guides you can either use Ubuntu Desktop or Ubuntu Server either physical devices or VMs:
 
    * [Ubuntu Desktop Install](https://documentation.ubuntu.com/desktop/en/latest/tutorial/install-ubuntu-desktop/)
-
+   * [Install Ubuntu Desktop in a vertualBox VM](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox)
    * [Ubuntu Server Install](https://ubuntu.com/tutorials/install-ubuntu-server)
 
 ### Topics
