@@ -3,9 +3,9 @@
 
 To follow along with these guides you can either use Ubuntu Desktop or Ubuntu Server either physical devices or VMs:
 
-   * [Ubuntu Desktop Install](https://www.freecodecamp.org/news/how-to-install-ubuntu-with-oracle-virtualbox/)
+   * [Ubuntu Desktop Install](https://ubuntu.com/tutorials/install-ubuntu-desktop)
 
-   * [Ubuntu Server Install](https://www.linuxtechi.com/how-to-install-ubuntu-server/)
+   * [Ubuntu Server Install](https://ubuntu.com/tutorials/install-ubuntu-server)
 
 ### Topics
 [1. Package Management](1.%20Package%20Management.md)
