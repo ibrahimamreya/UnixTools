@@ -3,7 +3,7 @@
 
 To follow along with these guides you can either use Ubuntu Desktop or Ubuntu Server either physical devices or VMs:
 
-   * [Ubuntu Desktop Install](https://ubuntu.com/tutorials/install-ubuntu-desktop)
+   * [Ubuntu Desktop Install](https://documentation.ubuntu.com/desktop/en/latest/tutorial/install-ubuntu-desktop/)
 
    * [Ubuntu Server Install](https://ubuntu.com/tutorials/install-ubuntu-server)
 
