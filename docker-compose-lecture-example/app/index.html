@@ -1,0 +1,45 @@
+<html lang="en">
+<style>
+    .container {
+        margin: 40px auto;
+        width: 80%;
+    }
+ 
+    hr {
+        width: 400px;
+        margin-left: 0;
+    }
+    h3 {
+        display: inline-block;
+    }
+    #static {
+        color: red;
+    }
+    #dynamic {
+        color: green;
+    }
+</style>
+<script>
+    (async function init() {
+        const cont = document.getElementById('container');
+        const response = await fetch('http://localhost:3000/fetch-data', {
+            method: "GET",
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            }
+        });
+        const jsonResponse = await response.json();
+        document.getElementById('dynamic').textContent = jsonResponse.data;
+    })();
+</script>
+<body>
+    <div class='container' id='container'>
+        <h1>Welcome to this Super Sophisticated App</h1>
+        <span>Some static data:  </span><h3 id="static">this is hard-coded in index.html</h3>
+        <hr />
+        <span>Data from MongoDB:  </span><h3 id="dynamic"></h3>
+        <hr />
+    </div>
+</body>
+</html>
