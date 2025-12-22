@@ -22,7 +22,7 @@
 <script>
     (async function init() {
         const cont = document.getElementById('container');
-        const response = await fetch('http://localhost:3000/fetch-data', {
+        const response = await fetch('http://[docker vm ip]:3000/fetch-data', {
             method: "GET",
             headers: {
               'Accept': 'application/json',
