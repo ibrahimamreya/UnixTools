@@ -1,0 +1,14 @@
+---
+
+- name: Install common tools
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install packages
+      apt:
+        name:
+          - git
+          - curl
+          - vim
+          - htop
+        state: present
