@@ -3,6 +3,13 @@
   hosts: webservers
   become: yes
   tasks:
+    - name: Create directory
+      file:
+        path: /var/www/html
+        state: directory
+        owner: www-data
+        group: www-data
+        mode: '0755'
     - name: Copy config file
       copy:
         src: index.html

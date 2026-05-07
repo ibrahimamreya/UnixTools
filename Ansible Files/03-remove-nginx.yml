@@ -7,9 +7,5 @@
       apt:
         name: nginx
         state: absent
-    - name: Remove old website files
-      file:
-        path: /var/www/html
-        state: absent
         
  

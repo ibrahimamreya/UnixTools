@@ -1,0 +1,11 @@
+---
+- name: Install Nginx
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Remove old website files
+      file:
+        path: /var/www/html
+        state: absent
+        
+ 
