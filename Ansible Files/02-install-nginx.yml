@@ -8,6 +8,11 @@
         name: nginx
         state: present
         update_cache: yes
+    - name: Restore default nginx page
+      copy:
+        src: /usr/share/nginx/html/index.html
+        dest: /var/www/html/index.nginx-debian.html
+        remote_src: yes
     - name: Ensure nginx is running
       service:
         name: nginx
