@@ -1,0 +1,10 @@
+---
+- name: Install Nginx
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: remove nginx package
+      apt:
+        name: nginx
+        state: absent
+        
