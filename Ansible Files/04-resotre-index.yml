@@ -10,7 +10,7 @@
         owner: www-data
         group: www-data
         mode: '0755'
-    - name: Copy config file
+    - name: Copy index file
       copy:
         src: index.html
         dest: /var/www/html/index.html
