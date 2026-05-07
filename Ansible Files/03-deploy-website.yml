@@ -5,5 +5,5 @@
   tasks:
     - name: Create index page
       copy:
-        content: "<h1>Hello from Ansible</h1>"
+        content: "<h1>Hello UnixTools Students</h1>"
         dest: /var/www/html/index.html
