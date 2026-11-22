@@ -6,7 +6,7 @@
     - name: Add users
       user:
         name: "{{ item }}"
-        state: absent
+        state: present
         shell: /bin/bash
       loop:
         - dev1
